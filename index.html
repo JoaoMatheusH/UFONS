@@ -6,7 +6,7 @@
     <title>UFONS - Terminal de Validação</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -17,7 +17,6 @@
             --input-bg: #0f172a;
             --border-color: #475569;
             --success-color: #10b981;
-            --paper-color: #f4f0e6;
         }
 
         body {
@@ -40,46 +39,56 @@
             max-width: 500px;
             padding: 25px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            position: relative;
         }
 
-        /* --- ESTILO DA FOLHA DE PAPEL (1926) --- */
+        /* --- PAPEL AMASSADO, SUJO E ANTIGO (1926) --- */
         .paper-note {
-            background-color: var(--paper-color);
-            background-image: url('http://googleusercontent.com/image_collection/image_retrieval/15904561400501556985');
-            background-size: cover;
-            color: #2a1a0a;
-            font-family: 'Caveat', cursive;
-            padding: 40px;
-            border-radius: 2px;
-            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
-            border: 1px solid #d1c7ac;
-            position: relative;
-            transform: rotate(-1deg);
-        }
-
-        .paper-note::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.05) 100%);
-            pointer-events: none;
+            background: #e6dfcc;
+            /* Degradês sobrepostos simulando manchas de umidade, sujeira nas bordas e dobras de papel amassado */
+            background-image: 
+                radial-gradient(circle at 30% 20%, rgba(94, 68, 33, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(54, 40, 22, 0.2) 0%, transparent 40%),
+                linear-gradient(45deg, rgba(0,0,0,0.02) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.02) 75%),
+                linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(0,0,0,0.08) 100%);
+            color: #1a1108;
+            /* Caligrafia muito mais humana e desordenada */
+            font-family: 'Reenie Beanie', cursive;
+            font-size: 26pt;
+            line-height: 0.9;
+            padding: 35px 25px;
+            width: 100%;
+            max-width: 420px;
+            box-sizing: border-box;
+            
+            /* Efeito de bordas levemente irregulares e textura de amassado */
+            border-radius: 4px 10px 3px 14px / 12px 4px 14px 3px;
+            border: 1px solid #c2b69d;
+            
+            /* Sombra pesada simulando o papel destacado física e torto na mesa */
+            box-shadow: 
+                3px 8px 16px rgba(0, 0, 0, 0.4),
+                inset 0 0 20px rgba(94, 68, 33, 0.2);
+            
+            transform: rotate(-2deg);
+            word-wrap: break-word;
         }
 
         .paper-note h2 {
-            margin-top: 0;
-            font-size: 28pt;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            margin: 0 0 10px 0;
+            font-size: 38pt;
+            letter-spacing: -2px;
+            opacity: 0.85;
+            border-bottom: 2px solid rgba(64, 46, 23, 0.2);
             display: inline-block;
         }
 
         .paper-note p {
-            font-size: 18pt;
-            line-height: 1.4;
-            margin-top: 20px;
+            margin: 0;
+            opacity: 0.9;
+            transform: rotate(0.5deg);
         }
 
-        /* --- ESTILOS DO TERMINAL UFONS --- */
+        /* --- ESTRUTURA DO TERMINAL UFONS --- */
         .header {
             text-align: center;
             border-bottom: 2px dashed var(--accent-color);
@@ -164,17 +173,17 @@
         </div>
 
         <div class="text-content">
-            <p><strong>CLÁUSULA 1:</strong> O responsável legal declara estar ciente dos riscos de monitoramento tático em Macajuba.</p>
-            <p><strong>CLÁUSULA 2:</strong> Sigilo absoluto sobre frequências captadas e eventos anômalos.</p>
-            <p><strong>CLÁUSULA 3:</strong> Autorização para Protocolos de Supressão Verbal em caso de vazamento.</p>
+            <p><strong>CLÁUSULA 1:</strong> Riscos de monitoramento tático mapeados no perímetro de Macajuba.</p>
+            <p><strong>CLÁUSULA 2:</strong> Sigilo total sobre transcepção de ondas e dados biológicos coletados.</p>
+            <p><strong>CLÁUSULA 3:</strong> Consentimento para protocolos preventivos de supressão cognitiva.</p>
         </div>
 
         <div style="text-align: center; border: 1px solid var(--accent-color); padding: 5px; color: var(--accent-color); font-size: 8pt; margin-bottom: 15px;">
-            S.I.M - AUTENTICADO
+            S.I.M - AUTENTICAÇÃO ATIVA
         </div>
 
-        <label style="font-size: 9pt; font-weight: bold;">ASSINATURA DIGITAL:</label>
-        <input type="text" id="signature" class="input-signature" placeholder="Digite o nome do responsável" autocomplete="off">
+        <label style="font-size: 9pt; font-weight: bold;">ASSINATURA DIGITAL DO RESPONSÁVEL:</label>
+        <input type="text" id="signature" class="input-signature" placeholder="Digite o nome para validar" autocomplete="off">
 
         <div id="feedback" class="terminal-msg"></div>
 
@@ -185,7 +194,7 @@
         <h2>1926</h2>
         <p>
             Após horas preparando as malas da Laura, ela veio até mim e disse: 
-            <strong>"Mamãe, bota esse broche na bolsa, por favor"</strong>. 
+            "Mamãe, bota esse broche na bolsa, por favor". 
             Era um bottom com um urso em preto e branco. Não entendi muito bem, mas escrevi algumas informações atrás, caso alguém precisasse.
         </p>
     </div>
@@ -196,7 +205,7 @@
             <p style="color: var(--success-color);">CONEXÃO HARTMANN ATIVA</p>
         </div>
         <div class="info-block">
-            <p style="color: #6ee7b7;"><strong>Hartmann:</strong> "Eles mentiram sobre 1926. O broche não era apenas um acessório. Era um rastreador biológico."</p>
+            <p style="color: #6ee7b7;"><strong>Hartmann:</strong> "Eles tentaram apagar o registro de 1926. Não confie nas cópias digitais da agência."</p>
         </div>
     </div>
 
@@ -215,26 +224,24 @@
                 return;
             }
 
-            // Rota Secreta Hartmann
             if (senhasHartmann.includes(input)) {
                 feedback.style.display = "block";
                 feedback.className = "terminal-msg msg-hartmann";
-                feedback.innerHTML = "Quebrando protocolo S.I.M... Acesso Hartmann liberado.";
+                feedback.innerHTML = "Quebrando canais S.I.M... Desviando para terminal seguro.";
                 setTimeout(() => {
                     document.getElementById("telaTermo").classList.add("hidden");
                     document.getElementById("telaHartmann").classList.remove("hidden");
-                }, 1500);
+                }, 1300);
                 return;
             }
 
-            // Rota Principal: Rita Lissandra
             if (input === "Rita Lissandra") {
                 document.getElementById("telaTermo").classList.add("hidden");
                 document.getElementById("telaSucesso").classList.remove("hidden");
             } else {
                 feedback.style.display = "block";
                 feedback.className = "terminal-msg msg-error";
-                feedback.innerHTML = "ERRO: Assinatura não reconhecida no perímetro.";
+                feedback.innerHTML = "ERRO: Assinatura inválida no banco de dados regional.";
             }
         }
     </script>
