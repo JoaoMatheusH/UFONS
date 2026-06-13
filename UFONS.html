@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFONS - Terminal de Validação</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #cbd5e1;
+            --accent-color: #ef4444;
+            --input-bg: #0f172a;
+            --border-color: #475569;
+            --success-color: #10b981;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px dashed var(--accent-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 13pt;
+            color: #f8fafc;
+            margin: 0 0 5px 0;
+        }
+
+        .header p {
+            font-size: 9pt;
+            color: var(--accent-color);
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .info-block {
+            font-size: 10pt;
+            background-color: rgba(15, 23, 42, 0.5);
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .info-line {
+            margin-bottom: 5px;
+        }
+
+        .text-content {
+            font-size: 10pt;
+            line-height: 1.5;
+            text-align: justify;
+            max-height: 140px;
+            overflow-y: scroll;
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            background-color: rgba(15, 23, 42, 0.3);
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 9pt;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .input-signature {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            color: #f8fafc;
+            font-family: inherit;
+            font-size: 11pt;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        .input-signature:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .stamp-box {
+            border: 2px solid var(--accent-color);
+            padding: 10px;
+            text-align: center;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 9pt;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background-color: rgba(239, 68, 68, 0.05);
+        }
+
+        .terminal-msg {
+            font-size: 9pt;
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .msg-error {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--accent-color);
+            color: #fca5a5;
+        }
+
+        .msg-hartmann {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success-color);
+            color: #6ee7b7;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-family: inherit;
+            font-size: 10pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .hidden-site {
+            display: none;
+        }
+        
+        .secret-title {
+            color: var(--success-color) !important;
+        }
+        
+        .secret-border {
+            border-bottom: 2px dashed var(--success-color) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="telaTermo" class="container">
+        <div class="header">
+            <h1>UNIÃO DE FORÇAS DE OCULTAÇÃO NATUREZA SIDERAL</h1>
+            <p>TERMO DE CIÊNCIA, RISCO E RESPONSABILIDADE DO DEPENDENTE</p>
+        </div>
+
+        <div class="info-block">
+            <div class="info-line"><strong>Declarante (Mãe/Pai):</strong> Alicia Antunes</div>
+            <div class="info-line"><strong>Código do Documento:</strong> TR-UFONS-1982-99</div>
+        </div>
+
+        <div class="text-content">
+            <p><strong>CLÁUSULA PRIMEIRA:</strong> O responsável legal declara estar ciente de que as atividades coordenadas envolvem exposição a ambientes de monitoramento tático e flutuações eletromagnéticas na região de Macajuba.</p>
+            <p><strong>CLÁUSULA SEGUNDA:</strong> Fica estabelecido o compromisso de sigilo absoluto sobre quaisquer eventos, dados ou frequências captadas pelo dependente durante o período operacional.</p>
+            <p><strong>CLÁUSULA TERCEIRA:</strong> A instituição fica autorizada a aplicar os Protocolos de Supressão Verbal e reajustes preventivos de memória caso ocorra quebra de sigilo informativo que comprometa a estabilidade política municipal.</p>
+        </div>
+
+        <div class="stamp-box">
+            [ CARIMBO DA S.I.M ]<br>
+            SISTEMA DE INTELIGÊNCIA MUNICIPAL<br>
+            AUTENTICAÇÃO REGIONAL: PROCESSO_OK
+        </div>
+
+        <div class="signature-section">
+            <label for="signature">Assinatura do Responsável Legal (Digite para validar):</label>
+            <input type="text" id="signature" class="input-signature" placeholder="Digite a assinatura eletrônica" autocomplete="off">
+        </div>
+
+        <div id="terminalFeedback" class="terminal-msg"></div>
+
+        <div style="margin-top: 20px;">
+            <button type="button" class="btn-submit" onclick="validarFormulario()">Confirmar Assinatura e Avançar ></button>
+        </div>
+    </div>
+
+
+    <div id="telaSucesso" class="container hidden-site">
+        <div class="header" style="border-bottom-color: var(--success-color);">
+            <h1 class="secret-title">ACESSO PERMITIDO • SISTEMA S.I.M</h1>
+            <p style="color: var(--success-color);">DOCUMENTO LIBERADO COM SUCESSO</p>
+        </div>
+        <div class="info-block">
+            <p><strong>STATUS:</strong> Assinatura de <em>Rita Lissandra</em> processada.</p>
+            <p><strong>PRÓXIMO PASSO DO ENIGMA:</strong> [Insira aqui o texto ou as coordenadas da próxima pista do jogo].</p>
+        </div>
+    </div>
+
+
+    <div id="telaHartmann" class="container hidden-site" style="border-color: var(--success-color);">
+        <div class="header secret-border">
+            <h1 class="secret-title">⚠️ SINAL INTERCEPTADO // REDE S.C.C.</h1>
+            <p style="color: var(--success-color);">CONEXÃO RESTRITA - PROTOCOLO ANTI-OCULTAÇÃO</p>
+        </div>
+        <div class="info-block" style="background-color: rgba(16, 185, 129, 0.05); border-color: var(--success-color);">
+            <p style="color: #6ee7b7;"><strong>Hartmann na escuta...</strong></p>
+            <p>Se você usou minhas velhas chaves de rádio, você já sabe a verdade sobre a farsa do paranormal.</p>
+            <p><strong>EASTER EGG / PISTA SECRETA:</strong> [Insira aqui o bônus ou pista alternativa para quem usou os códigos do Hartmann].</p>
+        </div>
+    </div>
+
+    <script>
+        function validarFormulario() {
+            var inputValor = document.getElementById("signature").value.trim();
+            var feedback = document.getElementById("terminalFeedback");
+            
+            feedback.style.display = "none";
+            feedback.className = "terminal-msg";
+
+            if (inputValor === "") {
+                feedback.style.display = "block";
+                feedback.classList.add("msg-error");
+                feedback.innerHTML = "ERRO: O campo de assinatura não pode estar vazio.";
+                return;
+            }
+
+            // Chaves secretas do Hartmann
+            var senhasHartmann = ["YaesuFT101B#1982", "770AM_MACAJUBA", "Anti_CafeComLeite_82", "Verdade_Nua_SCC", "X_Hartmann_8832"];
+
+            if (senhasHartmann.includes(inputValor)) {
+                feedback.style.display = "block";
+                feedback.classList.add("msg-hartmann");
+                feedback.innerHTML = "Desviando tráfego do terminal... Quebrando bloqueio S.I.M...";
+                
+                // Abre a tela secreta do Hartmann após 1.2 segundos sem recarregar
+                setTimeout(function() {
+                    document.getElementById("telaTermo").style.display = "none";
+                    document.getElementById("telaHartmann").style.display = "block";
+                }, 1200);
+                return;
+            }
+
+            // Validação da resposta principal do enigma
+            if (inputValor === "Rita Lissandra") {
+                document.getElementById("telaTermo").style.display = "none";
+                document.getElementById("telaSucesso").style.display = "block";
+            } else {
+                feedback.style.display = "block";
+                feedback.classList.add("msg-error");
+                feedback.innerHTML = "ERRO: Assinatura inválida. Nome divergente do banco de dados da S.I.M.";
+            }
+        }
+    </script>
+
+</body>
+</html>
